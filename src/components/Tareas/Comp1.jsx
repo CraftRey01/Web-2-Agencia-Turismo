@@ -1,4 +1,4 @@
-import "./App.css";
+import "./Comp1.css";
 import ima from "./assets/ima.jpg";
 
 function Hola() {

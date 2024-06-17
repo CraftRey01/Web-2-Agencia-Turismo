@@ -1,0 +1,25 @@
+.abcd {
+  background-color: yellow;
+  margin: 5px;
+  padding: 5px;
+  border: 5px;
+  border-color: red;
+  border-style: dashed;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.caja {
+  background-color: cadetblue;
+  padding: 20px;
+  border-style: solid;
+  border-color: blue;
+  text-align: center;
+}
+.abc {
+  background-color: aqua;
+  border-color: green;
+  border-style: dashed;
+  color: red;
+}

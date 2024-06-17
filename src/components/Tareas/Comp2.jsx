@@ -1,5 +1,5 @@
-import "./App.css";
-function Hola(props) {
+import "./Comp2.css";
+function Baile(props) {
   return (
     <div className="principal">
       <div className="texto">
@@ -18,4 +18,4 @@ function Hola(props) {
   );
 }
 
-export default Hola;
+export default Baile;

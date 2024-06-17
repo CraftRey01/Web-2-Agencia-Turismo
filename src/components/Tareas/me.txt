@@ -1,0 +1,130 @@
+/*css del menu  */
+.Cabecera {
+  width: 100%;
+  background-color: black;
+  padding: 0.5em;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  color: white;
+}
+
+.cab-1 {
+}
+.cab-a {
+  color: white;
+}
+.cab-boton {
+  display: none;
+}
+.cab-svg {
+  width: 2em;
+  height: 2em;
+}
+.cab-nav {
+  width: 100%;
+}
+.cab-ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+.cab-li {
+  margin: 0 0.5em;
+}
+
+@media screen and (max-width: 480px) {
+  .cab-boton {
+    display: flex;
+  }
+  .cab-nav {
+    /* width: 100%; */
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  .cab-nav.isActive {
+    height: 50vh;
+    opacity: 1;
+  }
+  .cab-ul {
+    flex-direction: column;
+  }
+  .cab-li {
+    margin: 0.5em 0;
+  }
+}
+
+/* jsx del menu */
+import { useState } from "react";
+import "./Menu.css";
+
+const Cabecera = () => {
+  const [menu, setMenu] = useState(false);
+  const toggleMenu = () => {
+    setMenu(!menu);
+  };
+  return (
+    <header className="Cabecera">
+      <h1 className="cabe-1">
+        <a href="#" className="cab-a">
+          Agencia de Turismo
+        </a>
+      </h1>
+      <button onClick={toggleMenu} className="cab-boton">
+        <svg
+          className="cab-svg"
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="40"
+          height="40"
+          viewBox="0 0 50 50"
+        >
+          <path d="M 3 9 A 1.0001 1.0001 0 1 0 3 11 L 47 11 A 1.0001 1.0001 0 1 0 47 9 L 3 9 z M 3 24 A 1.0001 1.0001 0 1 0 3 26 L 47 26 A 1.0001 1.0001 0 1 0 47 24 L 3 24 z M 3 39 A 1.0001 1.0001 0 1 0 3 41 L 47 41 A 1.0001 1.0001 0 1 0 47 39 L 3 39 z"></path>
+        </svg>
+      </button>
+      <nav className={`cab-nav ${menu ? "isActive" : ""}`}>
+        <ul className="cab-ul">
+          <li className="cab-li">
+            <a href="#" className="cab-a">
+              Item 1
+            </a>
+          </li>
+          <li className="cab-li">
+            <a href="#" className="cab-a">
+              Item 2
+            </a>
+          </li>
+          <li className="cab-li">
+            <a href="#" className="cab-a">
+              Item 3
+            </a>
+          </li>
+          <li className="cab-li">
+            <a href="#" className="cab-a">
+              Item 4
+            </a>
+          </li>
+          <li className="cab-li">
+            <a href="#" className="cab-a">
+              Item 5
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
+
+export default Cabecera;
